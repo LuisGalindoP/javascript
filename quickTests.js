@@ -1,3 +1,16 @@
-const myArr = [2,3,5,6,4];
+array = [-2, -1];
 
-console.log(myArr.at(-2));
+function sortedSquaredArray(array) {
+    let newArray = []
+    for (i in array) {
+        let square = array[i] * array[i];
+        if (array[i] < 0) {
+            newArray.unshift(square)
+        } else {
+            newArray.push(square)
+        }
+    }
+    return newArray;
+};
+
+console.log(sortedSquaredArray(array));
