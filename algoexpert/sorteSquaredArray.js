@@ -4,33 +4,37 @@
 
 array = [-5, -4, -3, -2, 7]
 
-function sortedSquaredArray(array) {
-    //Create a let for the new array to return
-    let squaredArray = [];
-    //Create lets for the start point index 0 and last index
-    let start  = 0;
-    let end = array.length - 1;
+//With this solution we will compare the most left array value with the most end array value
+//this is beacuse the list is order in ascendent order
+//If we find the left absolute value to be bigger we square and add that to the newArray and we move the left index to the right
+//If we find the right absolute value to be bigger we square and add that to the newArray and we move the right index to the left
 
-    //Go through all the array indexes
-    for (let i = 0; i < array.length; i++) {
-        //Compare the two ABSOLUTE numbers of both indexes start and end
-        if (Math.abs(array[start]) > Math.abs(array[end])) {
-            //If the start index absolute is larger square that and add it to the new array at the begining
-            console.log(Math.pow(array[start], 2));
-            squaredArray.unshift(Math.pow(array[start], 2));
+function numerosCuadrados(array) {
+    //Create a new array to return
+    let newArray = [];
+    //Create two variables for the first and last index, we will move these two indexes based on the largest one
+    let start = 0;
+    let end = array.length - 1;
+    //Add a for loop to go through the array elements
+    for (i in array) {
+        //Compare what absolute number is bigger array[start] or array[end], 
+        //this way we will get the largest number always
+        if (Math.abs(array[start]) > Math.abs(array[end])){
+            //Square up the bigger number
+            //Add the squared number to the new array in order where the largest will be at the end
+            newArray.unshift(Math.pow(array[start],2));
+            //If the index at the start was used move this index up
             start++;
         } else {
-            //If the end index absolute is larger square that and add it to the new array at the begining
-            console.log(Math.pow(array[end], 2));
-            squaredArray.unshift(Math.pow(array[end], 2));
+            //If the index at the end was used move this index down
+            newArray.unshift(Math.pow(array[end],2));
             end--;
         }
     }
-
-    return squaredArray;
+    return newArray;
 }
 
-console.log(sortedSquaredArray(array));
+console.log(numerosCuadrados(array));
 
 //New thing I learned:
 //Compare faster using the two index method at the start and end of an array

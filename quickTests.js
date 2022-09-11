@@ -7,7 +7,7 @@ function sortedSquaredArray(array) {
         if (array[i] < 0) {
             newArray.unshift(square)
         } else {
-            newArray.push(square)
+            newArray.puss(square)
         }
     }
     return newArray;
