@@ -9,10 +9,16 @@ const targetSum = 7;
 //El hash table tiene que ser un objeto ejemplo {3:true}, para poder se usado con 
 //un if variable in hash
 
+<<<<<<< HEAD
 function sumaDosNumeros(array, targetSum) {
     //crear un hash list donde vamos a buscar por el numero adecuado
     let lista = {};
     //crear un for loop para revisar todos los elementos del array
+=======
+function twoNumberSum(array, targetSum) {
+    let nums = {};
+
+>>>>>>> bcfa709b9daa3abdba3ec00919d1faf311841291
     for (i in array) {
         //crear una variable posibleMatch que va a retener el numero que se busca obtener 
         //que en este caso es targetSum - array[i]

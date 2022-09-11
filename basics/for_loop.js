@@ -15,10 +15,6 @@ for (i in array) {
     console.log(array[i],);
 };
 
-//SHORT HAND EXAMPLE 2, USE THIS TO FIND ELEMENTS IN AN OBJECT TOO
-for (cool in object) {
-    object[cool]? console.log(object[cool]) : console.log("no tenemos");
-};
 
 
 
